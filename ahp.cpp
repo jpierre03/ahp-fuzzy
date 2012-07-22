@@ -594,8 +594,10 @@ int main()
 	double delta;
 	cin>>delta;
 
+	/*
 	cout<<"-- File name definition"<<endl;
 	string s("namta.txt");
+	*/
 
 	vector < complex<double> > namta=Namta(A,delta);
 	cout<<"特征值："<<endl; 
