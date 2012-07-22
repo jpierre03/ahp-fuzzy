@@ -98,12 +98,12 @@ vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge)
 					swap(I[tk],I[k]);
 				}
 				tem=a[k][k];
-				for(i=0;i<(int)a[k].size();++i)
+				for(int i=0;i<(int)a[k].size();++i)
 				{
 					a[k][i]/=tem;
 					I[k][i]/=tem;
 				}
-				for(i=0;i<(int)a.size();++i)
+				for(int i=0;i<(int)a.size();++i)
 				{
 					if(i!=k)
 					{
@@ -246,7 +246,7 @@ vector<vector<double> > Hessenberg(vector<vector<double> > A)
 			ar[i]=A[i][r];
 		}
 		double c=0;
-		for(i=r+1;i<(int)A.size();++i)
+		for(int i=r+1;i<(int)A.size();++i)
 		{
 			c+=pow(ar[i],2);
 		}
@@ -254,7 +254,7 @@ vector<vector<double> > Hessenberg(vector<vector<double> > A)
 		c=(-c*sgn(ar[r+1]));
 		double p=sqrt(2*c*(c-ar[r+1]));
 		vector<double> u(A.size(),0);
-		for(i=r+1;i<(int)A.size();++i)
+		for(int i=r+1;i<(int)A.size();++i)
 		{
 			if(i==r+1)
 			{
@@ -266,7 +266,7 @@ vector<vector<double> > Hessenberg(vector<vector<double> > A)
 			}
 		}
 		vector<vector<double> > I;
-		for(i=0;i<(int)A.size();++i)
+		for(int i=0;i<(int)A.size();++i)
 		{
 			vector<double> z(A.size(),0);
 			z[i]=1;
@@ -288,7 +288,7 @@ vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q)
 		z[i]=1;
 		I.push_back(z);
 	} 
-	for(i=0;i<(int)A.size()-1;++i)
+	for(int i=0;i<(int)A.size()-1;++i)
 	{
 		double theta=atan(A[i+1][i]/A[i][i]);
 		vector<vector<double> > P;
@@ -528,7 +528,7 @@ void tranverse(double **a, double alpha, double beita, int n)
 				}
 			}   
 		}
-	for(i=0;i<n;i++)   
+	for(int i=0;i<n;i++)   
 		*(a[i]+i)=1;
 
 }
@@ -557,7 +557,7 @@ int main()
 		a[i]=new double[n]; 
 	} 
 
-	for(i=0;i<n;i++)   
+	for(int i=0;i<n;i++)   
 		for(int j=i+1;j<n;j++)
 		{
 			cout<<"输入第"<<i<<"和第"<<j<<"比较的结果："<<endl;
@@ -577,7 +577,7 @@ int main()
 	vector<vector<double> >A(n);
 
 
-	for(i=0;i<n;i++)   
+	for(int i=0;i<n;i++)   
 		for(int j=0;j<n;j++)
 		{
 			A[i].push_back(*(a[i]+j));   
@@ -593,7 +593,7 @@ int main()
 	Print(namta);
 
 	double maxnamta;
-	for(i=0;i<n;i++)  
+	for(int i=0;i<n;i++)  
 	{
 		if ((namta[i].real()>maxnamta)&&(namta[i].imag()==0))
 			maxnamta=namta[i].real();
@@ -615,7 +615,7 @@ int main()
 	Print(ve);
 
 	double sum=0;
-	for(i=0;i<n;i++)  
+	for(int i=0;i<n;i++)  
 	{
 		sum=sum+ve[i];
 	}
