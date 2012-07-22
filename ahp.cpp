@@ -1,5 +1,8 @@
-// envalue.cpp : Defines the entry point for the console application.
-//
+/** envalue.cpp : Defines the entry point for the console application.
+ *  Creation : (date unknown) by (unknown)
+ *             Source : http://www.codeforge.com/read/64380/normal.cpp__html
+ *  Licence : Undefined, so considered as Public Domain
+ */
 
 #include <math.h>
 #include <vector>
