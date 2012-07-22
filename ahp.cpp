@@ -594,11 +594,6 @@ int main()
 	double delta;
 	cin>>delta;
 
-	/*
-	cout<<"-- File name definition"<<endl;
-	string s("namta.txt");
-	*/
-
 	cout<<"-- Compute Namta"<<endl;
 	vector < complex<double> > namta=Namta(A,delta);
 	cout<<"\tnamta complex vector："<<endl; 
