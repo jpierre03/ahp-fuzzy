@@ -617,9 +617,13 @@ int main()
 
 	cout<<"-- Check consistency"<<endl;
 	if (check(maxnamta,n)==1)
+	{
 		cout<<"\t一consistency check : Passed！"<<endl;
+	}
 	else
+	{
 		cout<<"\t一consistency check : Failed！"<<endl;
+	}
 
 	cout<<"-- Preference Eigenvector"<<endl;
 	//cout<<maxnamta<<"所对应的特征向量："<<endl;
