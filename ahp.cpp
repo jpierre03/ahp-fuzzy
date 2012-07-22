@@ -599,28 +599,35 @@ int main()
 	string s("namta.txt");
 	*/
 
+	cout<<"-- Compute Namta"<<endl;
 	vector < complex<double> > namta=Namta(A,delta);
-	cout<<"特征值："<<endl; 
+	cout<<"\tnamta complex vector："<<endl; 
 	Print(namta);
 
+	cout<<"-- Search max real Namta value"<<endl;
 	double maxnamta;
-	for(int i=0;i<n;i++)  
+	for(int i=0;i<n;i++)
 	{
-		if ((namta[i].real()>maxnamta)&&(namta[i].imag()==0))
+		// found value is real AND bigger than current
+		if ((namta[i].real()>maxnamta)
+			&&(namta[i].imag()==0))
+		{
 			maxnamta=namta[i].real();
+		}
 	}
 
-	cout<<"最大特征值："; 
+	cout<<"\tMax real Namta value："; 
 	cout<<maxnamta<<endl;
 
 
-
+	cout<<"-- Check consistency"<<endl;
 	if (check(maxnamta,n)==1)
-		cout<<"一致性检查通过！"<<endl;
+		cout<<"\t一consistency check : Passed！"<<endl;
 	else
-		cout<<"一致性检查未通过！"<<endl;
+		cout<<"\t一consistency check : Failed！"<<endl;
 
-	cout<<maxnamta<<"所对应的特征向量："<<endl;
+	cout<<"-- Preference Eigenvector"<<endl;
+	//cout<<maxnamta<<"所对应的特征向量："<<endl;
 
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
 	Print(ve);
@@ -633,8 +640,8 @@ int main()
 		sum=sum+ve[i];
 	}
 
+	cout<<"\tnormalized result："<<endl;
 	vector<double> venorl=ve/sum;
-	cout<<maxnamta<<"\tNormalized result："<<endl;
 	Print(venorl);
 	return 0;
 }
