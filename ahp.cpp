@@ -614,7 +614,6 @@ int main()
 	cout<<"\tMax real Namta value："; 
 	cout<<maxnamta<<endl;
 
-
 	cout<<"-- Check consistency"<<endl;
 	if (check(maxnamta,n)==1)
 	{
@@ -626,8 +625,6 @@ int main()
 	}
 
 	cout<<"-- Preference Eigenvector"<<endl;
-	//cout<<maxnamta<<"所对应的特征向量："<<endl;
-
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
 	Print(ve);
 
