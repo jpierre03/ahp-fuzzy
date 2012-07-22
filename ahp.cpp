@@ -430,7 +430,7 @@ void Print(vector<double> a)
 {
 	for(int i=0;i<(int)a.size();++i)
 	{
-		cout<<a[i]<<"\t";
+		cout<<a[i]<<"\t|\t";
 	}
 	cout<<endl;
 }
@@ -548,7 +548,8 @@ int check(double maxnamta, int n)
 
 int main()
 {
-	cout<<"-- Enter matrix size："<<endl;
+	cout<<"Preference Matrix definition"<<endl;
+	cout<<"\tEnter matrix size："<<endl;
 	int n;
 	cin>>n;
 
@@ -589,9 +590,11 @@ int main()
 			A[i].push_back(*(a[i]+j));   
 		}
 
-	cout<<"输入误差:"<<endl;
+	cout<<"Enter delta value:"<<endl;
 	double delta;
 	cin>>delta;
+
+	cout<<"-- File name definition"<<endl;
 	string s("namta.txt");
 
 	vector < complex<double> > namta=Namta(A,delta);
@@ -620,6 +623,8 @@ int main()
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
 	Print(ve);
 
+	cout<<"-- Normalize vector"<<endl;
+	cout<<"\tdefine vector sum"<<endl;
 	double sum=0;
 	for(int i=0;i<n;i++)  
 	{
@@ -627,7 +632,7 @@ int main()
 	}
 
 	vector<double> venorl=ve/sum;
-	cout<<maxnamta<<"所对应的归一化权重："<<endl;
+	cout<<maxnamta<<"\tNormalized result："<<endl;
 	Print(venorl);
 	return 0;
 }
