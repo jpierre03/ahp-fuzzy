@@ -545,10 +545,11 @@ int check(double maxnamta, int n)
 
 int main()
 {
-	cout<<"输入比较矩阵的维数："<<endl;
+	cout<<"-- Enter matrix size："<<endl;
 	int n;
 	cin>>n;
 
+	cout<<"-- Create matrix"<<endl;
 	double   **a;
 	a=new double*[n]; 
 
@@ -557,27 +558,29 @@ int main()
 		a[i]=new double[n]; 
 	} 
 
+	cout<<"-- Intitialize matrix with user's values"<<endl;
 	for(int i=0;i<n;i++)   
 		for(int j=i+1;j<n;j++)
 		{
-			cout<<"输入第"<<i<<"和第"<<j<<"比较的结果："<<endl;
+			cout<<"\tline ["<<i<<"] column ["<<j<<"] Enter value ："<<endl;
 			cin>>*(a[i]+j);   
 		}
 
-	cout<<"输入置信概率："<<endl;
+	cout<<"-- Define stop conditions"<<endl;
+	cout<<"\tEnter alpha value："<<endl;
 	double alpha;
 	cin>>alpha;
 
-	cout<<"输入乐观系数："<<endl;
+	cout<<"\tEnter beita value："<<endl;
 	double beita;
 	cin>>beita;
 
+	cout<<"-- Tranverse matrix"<<endl;
 	tranverse(a,alpha,beita,n);
 
+	cout<<"-- XXXX"<<endl;
 	vector<vector<double> >A(n);
-
-
-	for(int i=0;i<n;i++)   
+	for(int i=0;i<n;i++) 
 		for(int j=0;j<n;j++)
 		{
 			A[i].push_back(*(a[i]+j));   
