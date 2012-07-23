@@ -566,7 +566,7 @@ int check(double maxnamta, int n) // {{{
 
 int main() // {{{
 {
-	cout<<"-- Preference Matrix definition"<<endl;
+	cout<<"-- Preference Matrix definition"<<endl;// {{{
 	cout<<"\tEnter matrix size："<<endl;
 	int n;
 	cin>>n;
@@ -582,13 +582,16 @@ int main() // {{{
 
 	cout<<"\tintitialize matrix with user's values"<<endl;
 	for(int i=0;i<n;i++)   
+    {
 		for(int j=i+1;j<n;j++)
 		{
 			cout<<"\t\tline ["<<i<<"] column ["<<j<<"] Enter value ："<<endl;
 			cin>>*(a[i]+j);   
 		}
+    }
+	// }}}
 
-	cout<<"-- Define stop conditions"<<endl;
+	cout<<"-- Define stop conditions"<<endl; // {{{
 	cout<<"\tenter alpha value："<<endl;
 	double alpha;
 	cin>>alpha;
@@ -596,6 +599,7 @@ int main() // {{{
 	cout<<"\tenter beita value："<<endl;
 	double beita;
 	cin>>beita;
+	// }}}
 
 	cout<<"-- Tranverse matrix"<<endl;
 	tranverse(a,alpha,beita,n);
@@ -617,7 +621,7 @@ int main() // {{{
 	double delta;
 	cin>>delta;
 
-	cout<<"-- Compute Namta"<<endl;
+	cout<<"-- Compute Namta"<<endl; // {{{
 	vector < complex<double> > namta=Namta(A,delta);
 	cout<<"\tnamta complex vector："<<endl; 
 	Print(namta);
@@ -636,8 +640,9 @@ int main() // {{{
 
 	cout<<"\tmax real Namta value："; 
 	cout<<maxnamta<<endl;
+	// }}}
 
-	cout<<"-- Check consistency"<<endl;
+	cout<<"-- Check consistency"<<endl; // {{{
 	if (check(maxnamta,n)==1)
 	{
 		cout<<"\t一consistency check : Passed！"<<endl;
@@ -646,14 +651,16 @@ int main() // {{{
 	{
 		cout<<"\t一consistency check : Failed！"<<endl;
 	}
+	// }}}
 
-	cout<<"-- Preference Eigenvector"<<endl;
+	cout<<"-- Preference Eigenvector"<<endl; // {{{
 	cout<<"\tcompute"<<endl;
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
 	cout<<"\tshow values"<<endl;
 	Print(ve);
+	// }}}
 
-	cout<<"-- Normalize vector"<<endl;
+	cout<<"-- Normalize vector"<<endl; // {{{
 	cout<<"\tdefine vector sum"<<endl;
 	double sum=0;
 	for(int i=0;i<n;i++)  
@@ -664,6 +671,9 @@ int main() // {{{
 	cout<<"\tnormalized result："<<endl;
 	vector<double> venorl=ve/sum;
 	Print(venorl);
+	// }}}
+
+    // End
 	return 0;
 }
 // }}}
