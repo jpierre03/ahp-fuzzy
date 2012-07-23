@@ -625,7 +625,9 @@ int main()
 	}
 
 	cout<<"-- Preference Eigenvector"<<endl;
+	cout<<"\tcompute"<<endl;
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
+	cout<<"\tshow values"<<endl;
 	Print(ve);
 
 	cout<<"-- Normalize vector"<<endl;
