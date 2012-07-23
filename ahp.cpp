@@ -443,7 +443,7 @@ void Print(vector<double> a) // {{{
     cout<<"\t\t";
 	for(int i=0;i<(int)a.size();++i)
 	{
-		printf("%3.5f\t|\t",a[i]);
+		printf("%3.5f | ",a[i]);
 	}
 	cout<<endl;
 }
@@ -608,7 +608,7 @@ int main() // {{{
 		for(int j=0;j<n;j++)
 		{
 			A[i].push_back(*(a[i]+j));
-			printf("%3.5f\t|\t",(*(a[i]+j)));
+			printf("%3.5f | ",(*(a[i]+j)));
 		}
 		cout<<endl;
     }
