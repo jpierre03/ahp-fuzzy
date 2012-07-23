@@ -433,16 +433,17 @@ void Print(vector<complex<double> > a) // {{{
 {
 	for(int i=0;i<(int)a.size();++i)
 	{
-		cout<<a[i]<<endl;
+		cout<<"\t\t"<<a[i]<<endl;
 	}
 }
 // }}}
 
 void Print(vector<double> a) // {{{
 {
+    cout<<"\t\t";
 	for(int i=0;i<(int)a.size();++i)
 	{
-		cout<<a[i]<<"\t|\t";
+		printf("%3.5f\t|\t",a[i]);
 	}
 	cout<<endl;
 }
@@ -602,10 +603,15 @@ int main() // {{{
 	cout<<"-- XXXX"<<endl;
 	vector<vector<double> >A(n);
 	for(int i=0;i<n;i++) 
+    {
+        cout<<"\t\t";
 		for(int j=0;j<n;j++)
 		{
-			A[i].push_back(*(a[i]+j));   
+			A[i].push_back(*(a[i]+j));
+			printf("%3.5f\t|\t",(*(a[i]+j)));
 		}
+		cout<<endl;
+    }
 
 	cout<<"Enter delta value:"<<endl;
 	double delta;
