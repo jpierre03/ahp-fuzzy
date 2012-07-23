@@ -565,12 +565,12 @@ int check(double maxnamta, int n) // {{{
 
 int main() // {{{
 {
-	cout<<"Preference Matrix definition"<<endl;
+	cout<<"-- Preference Matrix definition"<<endl;
 	cout<<"\tEnter matrix size："<<endl;
 	int n;
 	cin>>n;
 
-	cout<<"-- Create matrix"<<endl;
+	cout<<"\tcreate matrix"<<endl;
 	double   **a;
 	a=new double*[n]; 
 
@@ -579,20 +579,20 @@ int main() // {{{
 		a[i]=new double[n]; 
 	} 
 
-	cout<<"-- Intitialize matrix with user's values"<<endl;
+	cout<<"\tintitialize matrix with user's values"<<endl;
 	for(int i=0;i<n;i++)   
 		for(int j=i+1;j<n;j++)
 		{
-			cout<<"\tline ["<<i<<"] column ["<<j<<"] Enter value ："<<endl;
+			cout<<"\t\tline ["<<i<<"] column ["<<j<<"] Enter value ："<<endl;
 			cin>>*(a[i]+j);   
 		}
 
 	cout<<"-- Define stop conditions"<<endl;
-	cout<<"\tEnter alpha value："<<endl;
+	cout<<"\tenter alpha value："<<endl;
 	double alpha;
 	cin>>alpha;
 
-	cout<<"\tEnter beita value："<<endl;
+	cout<<"\tenter beita value："<<endl;
 	double beita;
 	cin>>beita;
 
@@ -616,7 +616,7 @@ int main() // {{{
 	cout<<"\tnamta complex vector："<<endl; 
 	Print(namta);
 
-	cout<<"-- Search max real Namta value"<<endl;
+	cout<<"\tsearch max real Namta value"<<endl;
 	double maxnamta;
 	for(int i=0;i<n;i++)
 	{
@@ -628,7 +628,7 @@ int main() // {{{
 		}
 	}
 
-	cout<<"\tMax real Namta value："; 
+	cout<<"\tmax real Namta value："; 
 	cout<<maxnamta<<endl;
 
 	cout<<"-- Check consistency"<<endl;
