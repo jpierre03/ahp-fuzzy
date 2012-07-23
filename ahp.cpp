@@ -16,7 +16,7 @@ using namespace std;
 
 typedef vector<double> double_vector;
 
-vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge)
+vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge) // {{{
 {
 	vector<vector<double> > b(a);
 	if(b.size()!=b[0].size())
@@ -124,8 +124,9 @@ vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge)
 		}
 	}
 }
+// }}}
 
-vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<double> > b)
+vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<double> > b)// {{{
 {
 	bool dd=true;
 	if(a.size()!=b.size())
@@ -160,8 +161,9 @@ vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<doub
 		return ss;
 	}
 }
+// }}}
 
-vector<vector<double> > operator * (double a,vector<vector<double> > b)
+vector<vector<double> > operator * (double a,vector<vector<double> > b) // {{{ 
 {
 	for(int i=0;i<(int)b.size();++i)
 		for(int j=0;j<(int)b[i].size();++j)
@@ -170,8 +172,9 @@ vector<vector<double> > operator * (double a,vector<vector<double> > b)
 		}
 	return b;
 }
+// }}}
 
-vector<double> operator * (vector<vector<double> > a,vector<double> b)
+vector<double> operator * (vector<vector<double> > a,vector<double> b) // {{{
 {
 	vector<double> c;
 	for(int i=0;i<(int)a.size();++i)
@@ -185,8 +188,9 @@ vector<double> operator * (vector<vector<double> > a,vector<double> b)
 	}
 	return c;
 }
+// }}}
 
-vector<vector<double> > operator * (vector<vector<double> > a,vector<vector<double> > b)
+vector<vector<double> > operator * (vector<vector<double> > a,vector<vector<double> > b) // {{{
 {
 	if(a[0].size()!=b.size())
 	{
@@ -211,8 +215,9 @@ vector<vector<double> > operator * (vector<vector<double> > a,vector<vector<doub
 		return ss;
 	}
 }
+// }}}
 
-vector<vector<double> > operator * (vector<double> a,vector<double> b)
+vector<vector<double> > operator * (vector<double> a,vector<double> b) // {{{
 {
 	vector<vector<double> > result(a.size());
 	for(int i=0;i<(int)result.size();++i)
@@ -224,8 +229,9 @@ vector<vector<double> > operator * (vector<double> a,vector<double> b)
 	}
 	return result;
 }
+// }}}
 
-int sgn(double x)
+int sgn(double x) // {{{
 {
 	if(x>0)
 	{
@@ -238,8 +244,9 @@ int sgn(double x)
 		return -1;
 	}
 }
+// }}}
 
-vector<vector<double> > Hessenberg(vector<vector<double> > A)
+vector<vector<double> > Hessenberg(vector<vector<double> > A) // {{{
 {
 	for(int r=0;r<(int)A.size()-2;++r)
 	{
@@ -281,8 +288,9 @@ vector<vector<double> > Hessenberg(vector<vector<double> > A)
 	}
 	return A;
 }
+// }}}
 
-vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q)
+vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q) // {{{
 {
 	vector<vector<double> > I;
 	for(int i=0;i<(int)A.size();++i)
@@ -318,9 +326,9 @@ vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q)
 	Q=Inverse(I,s);
 	return A;
 }
+// }}}
 
-
-double Delta(vector<vector<double> > a)
+double Delta(vector<vector<double> > a) // {{{
 {
 	double ss=0;
 	for(int i=0;i<(int)a.size();++i)
@@ -337,9 +345,10 @@ double Delta(vector<vector<double> > a)
 		}
 	}
 	return ss;
-}
+}     
+// }}}
 
-double Delta1(vector<vector<double> > A)
+double Delta1(vector<vector<double> > A) // {{{
 {
 	double d=0;
 	for(int i=0;i<(int)A.size()-1;++i)
@@ -355,8 +364,9 @@ double Delta1(vector<vector<double> > A)
 	}
 	return d;
 }
+// }}}
 
-vector<complex<double> > Namta(vector<vector<double> > A,double delta)
+vector<complex<double> > Namta(vector<vector<double> > A,double delta) // {{{
 {
 	double delta1=0;
 	while((Delta(A)>=delta)&&(fabs(Delta1(A)-delta1)>=delta))
@@ -417,16 +427,18 @@ vector<complex<double> > Namta(vector<vector<double> > A,double delta)
 	}
 	return namta;
 } 
+// }}}
 
-void Print(vector<complex<double> > a)
+void Print(vector<complex<double> > a) // {{{
 {
 	for(int i=0;i<(int)a.size();++i)
 	{
 		cout<<a[i]<<endl;
 	}
 }
+// }}}
 
-void Print(vector<double> a)
+void Print(vector<double> a) // {{{
 {
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -434,8 +446,9 @@ void Print(vector<double> a)
 	}
 	cout<<endl;
 }
+// }}}
 
-double Delta(vector<double> a,vector<double> b)
+double Delta(vector<double> a,vector<double> b) // {{{
 {
 	double x=0;
 	for(int i=0;i<(int)a.size();++i)
@@ -447,8 +460,9 @@ double Delta(vector<double> a,vector<double> b)
 	}
 	return x;
 }
+// }}}
 
-double Max(vector<double> a)
+double Max(vector<double> a) // {{{
 {
 	double x=0;
 	int n=0;
@@ -462,8 +476,9 @@ double Max(vector<double> a)
 	}
 	return a[n];
 }
+// }}}
 
-vector<double> operator / (vector<double> a,double b)
+vector<double> operator / (vector<double> a,double b) // {{{
 {
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -471,8 +486,9 @@ vector<double> operator / (vector<double> a,double b)
 	}
 	return a;
 }
+// }}}
 
-vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,double delta)
+vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,double delta) // {{{
 {
 	vector<vector<double> > I;
 	for(int i=0;i<(int)A.size();++i)
@@ -495,9 +511,9 @@ vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,dou
 	}while(Delta(z,z1)>=delta);
 	return z;
 }
+// }}}
 
-
-void tranverse(double **a, double alpha, double beita, int n)
+void tranverse(double **a, double alpha, double beita, int n) // {{{
 {
 	for(int i=0;i<n;i++)   
 		for(int j=i+1;j<n;j++)
@@ -535,8 +551,9 @@ void tranverse(double **a, double alpha, double beita, int n)
 		*(a[i]+i)=1;
 
 }
+// }}}
 
-int check(double maxnamta, int n)
+int check(double maxnamta, int n) // {{{
 {
 	double a[9]={0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45};
 	if (((maxnamta-n)/(n-1))/a[n-1]<0.1)
@@ -544,9 +561,9 @@ int check(double maxnamta, int n)
 	else 
 		return 0;
 }
+// }}}
 
-
-int main()
+int main() // {{{
 {
 	cout<<"Preference Matrix definition"<<endl;
 	cout<<"\tEnter matrix size："<<endl;
@@ -643,4 +660,4 @@ int main()
 	Print(venorl);
 	return 0;
 }
-
+// }}}
