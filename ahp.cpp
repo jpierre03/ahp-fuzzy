@@ -203,7 +203,7 @@ vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<doub
 }
 // }}}
 
-vector<vector<double> > operator * (double a,vector<vector<double> > b) // {{{ 
+vector<vector<double> > operator * (double a,vector<vector<double> > b) // {{{
 {
 	OPERATOR("*");
 	for(int i=0;i<(int)b.size();++i)
@@ -356,7 +356,7 @@ vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q)
 		vector<double> z(A.size(),0);
 		z[i]=1;
 		I.push_back(z);
-	} 
+	}
 	for(int i=0;i<(int)A.size()-1;++i)
 	{
 		double theta=atan(A[i+1][i]/A[i][i]);
@@ -404,7 +404,7 @@ double Delta(vector<vector<double> > a) // {{{
 		}
 	}
 	return ss;
-}     
+}
 // }}}
 
 double Delta1(vector<vector<double> > A) // {{{
@@ -487,7 +487,7 @@ vector<complex<double> > Namta(vector<vector<double> > A,double delta) // {{{
 		}
 	}
 	return namta;
-} 
+}
 // }}}
 
 void Print(vector<complex<double> > a) // {{{
@@ -573,7 +573,7 @@ vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,dou
 void tranverse(double **a, double alpha, double beita, int n) // {{{
 {
 	FUNCTION("tranverse");
-	for(int i=0;i<n;i++)   
+	for(int i=0;i<n;i++)
 		for(int j=i+1;j<n;j++)
 		{
 			double temp=*(a[i]+j);
@@ -603,9 +603,9 @@ void tranverse(double **a, double alpha, double beita, int n) // {{{
 					*(a[j]+i)=beita*(temp-2+2*alpha)+(1-beita)*(temp+2-2*alpha);
 					*(a[i]+j)=beita/(temp-2+2*alpha)+(1-beita)/(temp+2-2*alpha);
 				}
-			}   
+			}
 		}
-	for(int i=0;i<n;i++)   
+	for(int i=0;i<n;i++)
 		*(a[i]+i)=1;
 
 }
@@ -617,7 +617,7 @@ int check(double maxnamta, int n) // {{{
 	double a[9]={0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45};
 	if (((maxnamta-n)/(n-1))/a[n-1]<0.1)
 		return 1;
-	else 
+	else
 		return 0;
 }
 // }}}
@@ -631,20 +631,20 @@ int main() // {{{
 
 	L2("create matrix");
 	double   **a;
-	a=new double*[n]; 
+	a=new double*[n];
 
-	for(int i=0;i<n;i++) 
+	for(int i=0;i<n;i++)
 	{
-		a[i]=new double[n]; 
-	} 
+		a[i]=new double[n];
+	}
 
 	L2("intitialize matrix with user's values");
-	for(int i=0;i<n;i++)   
+	for(int i=0;i<n;i++)
     {
 		for(int j=i+1;j<n;j++)
 		{
 			cout<<"\t\tline ["<<i<<"] column ["<<j<<"] Enter value ："<<endl;
-			cin>>*(a[i]+j);   
+			cin>>*(a[i]+j);
 		}
     }
 	// }}}
@@ -664,7 +664,7 @@ int main() // {{{
 
 	L1("XXXX");
 	vector<vector<double> >A(n);
-	for(int i=0;i<n;i++) 
+	for(int i=0;i<n;i++)
     {
         cout<<"\t\t";
 		for(int j=0;j<n;j++)
@@ -728,7 +728,7 @@ int main() // {{{
 	L1("Normalize vector"); // {{{
 	L2("define vector sum");
 	double sum=0;
-	for(int i=0;i<n;i++)  
+	for(int i=0;i<n;i++)
 	{
 		sum=sum+ve[i];
 	}
