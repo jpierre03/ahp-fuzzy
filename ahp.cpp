@@ -635,12 +635,12 @@ int check(double maxnamta, int n) // {{{
 
 int main() // {{{
 {
-	cout<<"-- Preference Matrix definition"<<endl;// {{{
-	cout<<"\tEnter matrix size："<<endl;
+	L1("Preference Matrix definition");// {{{
+	L2("Enter matrix size：");
 	int n;
 	cin>>n;
 
-	cout<<"\tcreate matrix"<<endl;
+	L2("create matrix");
 	double   **a;
 	a=new double*[n]; 
 
@@ -649,7 +649,7 @@ int main() // {{{
 		a[i]=new double[n]; 
 	} 
 
-	cout<<"\tintitialize matrix with user's values"<<endl;
+	L2("intitialize matrix with user's values");
 	for(int i=0;i<n;i++)   
     {
 		for(int j=i+1;j<n;j++)
@@ -660,20 +660,20 @@ int main() // {{{
     }
 	// }}}
 
-	cout<<"-- Define stop conditions"<<endl; // {{{
-	cout<<"\tenter alpha value："<<endl;
+	L1("Define stop conditions"); // {{{
+	L2("enter alpha value：");
 	double alpha;
 	cin>>alpha;
 
-	cout<<"\tenter beita value："<<endl;
+	L2("enter beita value：");
 	double beita;
 	cin>>beita;
 	// }}}
 
-	cout<<"-- Tranverse matrix"<<endl;
+	L1("Tranverse matrix");
 	tranverse(a,alpha,beita,n);
 
-	cout<<"-- XXXX"<<endl;
+	L1("XXXX");
 	vector<vector<double> >A(n);
 	for(int i=0;i<n;i++) 
     {
@@ -686,16 +686,16 @@ int main() // {{{
 		cout<<endl;
     }
 
-	cout<<"Enter delta value:"<<endl;
+	L2("Enter delta value:");
 	double delta;
 	cin>>delta;
 
-	cout<<"-- Compute Namta"<<endl; // {{{
+	L1("Compute Namta"); // {{{
 	vector < complex<double> > namta=Namta(A,delta);
-	cout<<"\tnamta complex vector："<<endl; 
+	L2("namta complex vector：");
 	Print(namta);
 
-	cout<<"\tsearch max real Namta value"<<endl;
+	L2("search max real Namta value");
 	double maxnamta;
 	for(int i=0;i<n;i++)
 	{
@@ -707,42 +707,42 @@ int main() // {{{
 		}
 	}
 
-	cout<<"\tmax real Namta value："; 
+	L2("max real Namta value：");
 	cout<<maxnamta<<endl;
 	// }}}
 
-	cout<<"-- Check consistency"<<endl; // {{{
+	L1("Check consistency"); // {{{
 	if (check(maxnamta,n)==1)
 	{
-		cout<<"\t一consistency check : Passed！"<<endl;
+		OK("","一consistency check : Passed！");
 	}
 	else
 	{
-		cout<<"\t一consistency check : Failed！"<<endl;
+		NOK("","一consistency check : Failed！");
 	}
 	// }}}
 
-	cout<<"-- Preference Eigenvector"<<endl; // {{{
-	cout<<"\tcompute"<<endl;
+	L1("Preference Eigenvector"); // {{{
+	L2("compute");
 	vector<double> ve=ComputeVector(A,maxnamta,delta);
-	cout<<"\tshow values"<<endl;
+	L2("show values");
 	Print(ve);
 	// }}}
 
-	cout<<"-- Normalize vector"<<endl; // {{{
-	cout<<"\tdefine vector sum"<<endl;
+	L1("Normalize vector"); // {{{
+	L2("define vector sum");
 	double sum=0;
 	for(int i=0;i<n;i++)  
 	{
 		sum=sum+ve[i];
 	}
 
-	cout<<"\tnormalized result："<<endl;
+	L2("normalized result：");
 	vector<double> venorl=ve/sum;
 	Print(venorl);
 	// }}}
 
-	cout<<"-- End"<<endl;
+	L1("End");
 	return 0;
 }
 // }}}
