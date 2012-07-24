@@ -44,11 +44,11 @@
 //#define OK(x,y)		do { printf("%s[%s%d%s]%s   %s%s\n",BLUE,GREEN,++global_ok_nb,BLUE,DEFAULT_COLOR,x,y); } while (0)
 //#define NOK(y)		do { printf("%s[%s%s%s]%s  %s\n",BLUE,RED,"nok",BLUE,DEFAULT_COLOR,y); } while (0)
 
-#define FUNCTION(y)	do { FORMAT(BLUE,GREEN,YELLOW,	" ","  ","\t\t\tfunction "	,y);} while (0)
-#define OPERATOR(y)	do { FORMAT(BLUE,GREEN,YELLOW,	" ","  ","\t\t\toperator "	,y);} while (0)
-#define L1(y)		do { FORMAT(BLUE,GREEN,RED,		"|","ok",""			,y);} while (0)
-#define L2(y)		do { FORMAT(BLUE,GREEN,GREEN,	"|","ok","\t"		,y);} while (0)
-#define L3(y)		do { FORMAT(BLUE,GREEN,YELLOW,	"|","ok","\t\t"		,y);} while (0)
+#define FUNCTION(y)	do { FORMAT(BLUE,GREEN,PURPLE,	" ","  ","\t\t\tfunction "	,y);} while (0)
+#define OPERATOR(y)	do { FORMAT(BLUE,GREEN,PURPLE,	" ","  ","\t\t\toperator "	,y);} while (0)
+#define L1(y)		do { FORMAT(BLUE,GREEN,YELLOW,	"|","ok",""			,y);} while (0)
+#define L2(y)		do { FORMAT(BLUE,GREEN,GREEN,	"|","ok","\t "		,y);} while (0)
+#define L3(y)		do { FORMAT(BLUE,GREEN,CYAN,	"|","ok","\t\t "		,y);} while (0)
 
 using namespace std;
 
