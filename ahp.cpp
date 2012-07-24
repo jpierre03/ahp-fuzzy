@@ -544,17 +544,6 @@ double Max(vector<double> a) // {{{
 }
 // }}}
 
-vector<double> operator / (vector<double> a,double b) // {{{
-{
-	OPERATOR("/");
-	for(int i=0;i<(int)a.size();++i)
-	{
-		a[i]/=b;
-	}
-	return a;
-}
-// }}}
-
 vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,double delta) // {{{
 {
 	FUNCTION("ComputeVector");
