@@ -38,7 +38,7 @@
 #define NOK(y)		do { printf("%s[%s%s%s]%s  %s\n",BLUE,RED,"nok",BLUE,DEFAULT_COLOR,y); } while (0)
 
 #define FUNCTION(y)	do { OK("function ",y); } while (0)
-#define OPERATOR(y)	do { OK("function ",y); } while (0)
+#define OPERATOR(y)	do { OK("operator ",y); } while (0)
 
 using namespace std;
 
