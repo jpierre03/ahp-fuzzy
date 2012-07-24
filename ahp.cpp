@@ -157,7 +157,7 @@ vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge) // {{{
 
 vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<double> > b)// {{{
 {
-	cout<<"function Operator -"<<endl;
+	OPERATOR("-");
 	bool dd=true;
 	if(a.size()!=b.size())
 	{
@@ -195,7 +195,7 @@ vector<vector<double> > operator - (vector<vector<double> > a,vector<vector<doub
 
 vector<vector<double> > operator * (double a,vector<vector<double> > b) // {{{ 
 {
-	cout<<"function Operator *"<<endl;
+	OPERATOR("*");
 	for(int i=0;i<(int)b.size();++i)
 		for(int j=0;j<(int)b[i].size();++j)
 		{
@@ -207,7 +207,7 @@ vector<vector<double> > operator * (double a,vector<vector<double> > b) // {{{
 
 vector<double> operator * (vector<vector<double> > a,vector<double> b) // {{{
 {
-	cout<<"function Operator *"<<endl;
+	OPERATOR("*");
 	vector<double> c;
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -224,7 +224,7 @@ vector<double> operator * (vector<vector<double> > a,vector<double> b) // {{{
 
 vector<vector<double> > operator * (vector<vector<double> > a,vector<vector<double> > b) // {{{
 {
-	cout<<"function Operator *"<<endl;
+	OPERATOR("*");
 	if(a[0].size()!=b.size())
 	{
 		vector<vector<double> > ss;
@@ -252,7 +252,7 @@ vector<vector<double> > operator * (vector<vector<double> > a,vector<vector<doub
 
 vector<vector<double> > operator * (vector<double> a,vector<double> b) // {{{
 {
-	cout<<"function Operator *"<<endl;
+	OPERATOR("*");
 	vector<vector<double> > result(a.size());
 	for(int i=0;i<(int)result.size();++i)
 	{
@@ -525,7 +525,7 @@ double Max(vector<double> a) // {{{
 
 vector<double> operator / (vector<double> a,double b) // {{{
 {
-	cout<<"function Operator /"<<endl;
+	OPERATOR("/");
 	for(int i=0;i<(int)a.size();++i)
 	{
 		a[i]/=b;
