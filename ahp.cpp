@@ -267,7 +267,7 @@ vector<vector<double> > operator * (vector<double> a,vector<double> b) // {{{
 
 int sgn(double x) // {{{
 {
-	cout<<"function Sgn"<<endl;
+	FUNCTION("Sgn");
 	if(x>0)
 	{
 		return 1;
