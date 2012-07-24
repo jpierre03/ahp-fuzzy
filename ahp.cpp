@@ -46,7 +46,7 @@ typedef vector<double> double_vector;
 
 vector<vector<double> > Inverse(vector<vector<double> > a,bool &judge) // {{{
 {
-	cout<<"function Inverse"<<endl;
+	FUNCTION("Inverse");
 	vector<vector<double> > b(a);
 	if(b.size()!=b[0].size())
 	{
@@ -283,7 +283,7 @@ int sgn(double x) // {{{
 
 vector<vector<double> > Hessenberg(vector<vector<double> > A) // {{{
 {
-	cout<<"function Hessenberg"<<endl;
+	FUNCTION("Hessenberg");
 	for(int r=0;r<(int)A.size()-2;++r)
 	{
 		vector<double> ar(A.size(),0);
@@ -328,7 +328,7 @@ vector<vector<double> > Hessenberg(vector<vector<double> > A) // {{{
 
 vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q) // {{{
 {
-	cout<<"function QR"<<endl;
+	FUNCTION("QR");
 	vector<vector<double> > I;
 	for(int i=0;i<(int)A.size();++i)
 	{
@@ -367,7 +367,7 @@ vector<vector<double> > QR(vector<vector<double> > A,vector<vector<double> > &Q)
 
 double Delta(vector<vector<double> > a) // {{{
 {
-	cout<<"function Delta"<<endl;
+	FUNCTION("Delta");
 	double ss=0;
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -388,7 +388,7 @@ double Delta(vector<vector<double> > a) // {{{
 
 double Delta1(vector<vector<double> > A) // {{{
 {
-	cout<<"function Delta1"<<endl;
+	FUNCTION("Delta1");
 	double d=0;
 	for(int i=0;i<(int)A.size()-1;++i)
 	{
@@ -407,7 +407,7 @@ double Delta1(vector<vector<double> > A) // {{{
 
 vector<complex<double> > Namta(vector<vector<double> > A,double delta) // {{{
 {
-	cout<<"function Namta"<<endl;
+	FUNCTION("Namta");
 	double delta1=0;
 	while((Delta(A)>=delta)&&(fabs(Delta1(A)-delta1)>=delta))
 	{
@@ -471,7 +471,7 @@ vector<complex<double> > Namta(vector<vector<double> > A,double delta) // {{{
 
 void Print(vector<complex<double> > a) // {{{
 {
-	cout<<"function Print"<<endl;
+	FUNCTION("Print");
 	for(int i=0;i<(int)a.size();++i)
 	{
 		cout<<"\t\t"<<a[i]<<endl;
@@ -481,7 +481,7 @@ void Print(vector<complex<double> > a) // {{{
 
 void Print(vector<double> a) // {{{
 {
-	cout<<"function Print"<<endl;
+	FUNCTION("Print");
     cout<<"\t\t";
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -493,7 +493,7 @@ void Print(vector<double> a) // {{{
 
 double Delta(vector<double> a,vector<double> b) // {{{
 {
-	cout<<"function Delta"<<endl;
+	FUNCTION("Delta");
 	double x=0;
 	for(int i=0;i<(int)a.size();++i)
 	{
@@ -508,7 +508,7 @@ double Delta(vector<double> a,vector<double> b) // {{{
 
 double Max(vector<double> a) // {{{
 {
-	cout<<"function Max"<<endl;
+	FUNCTION("Max");
 	double x=0;
 	int n=0;
 	for(int i=0;i<(int)a.size();++i)
@@ -536,7 +536,7 @@ vector<double> operator / (vector<double> a,double b) // {{{
 
 vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,double delta) // {{{
 {
-	cout<<"function ComputeVector"<<endl;
+	FUNCTION("ComputeVector");
 	vector<vector<double> > I;
 	for(int i=0;i<(int)A.size();++i)
 	{
@@ -562,7 +562,7 @@ vector<double> ComputeVector(vector<vector<double> > A,complex<double> namta,dou
 
 void tranverse(double **a, double alpha, double beita, int n) // {{{
 {
-	cout<<"function tranverse"<<endl;
+	FUNCTION("tranverse");
 	for(int i=0;i<n;i++)   
 		for(int j=i+1;j<n;j++)
 		{
@@ -603,7 +603,7 @@ void tranverse(double **a, double alpha, double beita, int n) // {{{
 
 int check(double maxnamta, int n) // {{{
 {
-	cout<<"function Check"<<endl;
+	FUNCTION("Check");
 	double a[9]={0,0,0.58,0.9,1.12,1.24,1.32,1.41,1.45};
 	if (((maxnamta-n)/(n-1))/a[n-1]<0.1)
 		return 1;
