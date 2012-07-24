@@ -669,8 +669,15 @@ int main() // {{{
         cout<<"\t\t";
 		for(int j=0;j<n;j++)
 		{
+			if(i>j){
+				cout<<BLUE;
+			}
+			if(i==j){
+				cout<<CYAN;
+			}
 			A[i].push_back(*(a[i]+j));
-			printf("%3.5f | ",(*(a[i]+j)));
+			printf("%7.5f | ",(*(a[i]+j)));
+			cout<<DEFAULT_COLOR;
 		}
 		cout<<endl;
     }
