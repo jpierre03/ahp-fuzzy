@@ -265,6 +265,17 @@ vector<vector<double> > operator * (vector<double> a,vector<double> b) // {{{
 }
 // }}}
 
+vector<double> operator / (vector<double> a,double b) // {{{
+{
+	OPERATOR("/");
+	for(int i=0;i<(int)a.size();++i)
+	{
+		a[i]/=b;
+	}
+	return a;
+}
+// }}}
+
 int sgn(double x) // {{{
 {
 	FUNCTION("Sgn");
