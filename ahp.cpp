@@ -142,8 +142,7 @@ vector<vector<double> > Inverse(vector<vector<double> > a, bool &judge) {
 	}
 }
 
-vector<vector<double> > operator -(vector<vector<double> > a,
-		vector<vector<double> > b) {
+vector<vector<double> > operator -(vector<vector<double> > a,vector<vector<double> > b) {
 	OPERATOR("-");
 	bool dd = true;
 	if (a.size() != b.size()) {
