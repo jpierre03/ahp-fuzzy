@@ -12,7 +12,6 @@
 
 //#define BG_LIGHT
 #ifndef BG_LIGHT
-
 	#define BLACK    "\033[1;30m"
 	#define RED      "\033[1;31m"
 	#define GREEN    "\033[1;32m"
@@ -34,8 +33,15 @@
 
 #define DEFAULT_COLOR "\033[0;m"
 
-#define FORMAT(color_delimiter,color_text, color_comment,delimiter, comment, x,y)												\
-		do { printf("%s%s%s%s%s%s%s  %s%s%s\n",color_delimiter,delimiter,color_text,comment,color_delimiter,delimiter,color_comment,x,y,DEFAULT_COLOR); }	while (0)
+#define FORMAT(color_delimiter,color_text, color_comment,delimiter, comment, x,y)	\
+	do { printf("%s%s%s%s%s%s%s  %s%s%s\n",\
+			color_delimiter,delimiter,\
+			color_text,	comment,\
+			color_delimiter,delimiter,\
+			color_comment,\
+			x,y,\
+			DEFAULT_COLOR);\
+       	} while (0)
 
 #define OK(x,y)		do { FORMAT(BLUE,GREEN,DEFAULT_COLOR,"|","ok",x,y);} while (0)
 #define NOK(x,y)	do { FORMAT(BLUE,RED,DEFAULT_COLOR,"|","nok",x,y);} while (0)
