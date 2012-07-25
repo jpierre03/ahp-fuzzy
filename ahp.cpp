@@ -462,10 +462,8 @@ void tranverse(double **a, double alpha, double beita, int n) {
 					*(a[i] + j) = beita + (1 - beita) * (3 - 2 * alpha);
 					*(a[j] + i) = beita + (1 - beita) / (3 - 2 * alpha);
 				} else {
-					*(a[i] + j) = beita * (temp - 2 + 2 * alpha)
-							+ (1 - beita) * (temp + 2 - 2 * alpha);
-					*(a[j] + i) = beita / (temp - 2 + 2 * alpha)
-							+ (1 - beita) / (temp + 2 - 2 * alpha);
+					*(a[i] + j) = beita * (temp - 2 + 2 * alpha) + (1 - beita) * (temp + 2 - 2 * alpha);
+					*(a[j] + i) = beita / (temp - 2 + 2 * alpha) + (1 - beita) / (temp + 2 - 2 * alpha);
 				}
 			} else {
 				temp = -temp;
@@ -473,10 +471,8 @@ void tranverse(double **a, double alpha, double beita, int n) {
 					*(a[i] + j) = beita + (1 - beita) / (3 - 2 * alpha);
 					*(a[j] + i) = beita + (1 - beita) * (3 - 2 * alpha);
 				} else {
-					*(a[j] + i) = beita * (temp - 2 + 2 * alpha)
-							+ (1 - beita) * (temp + 2 - 2 * alpha);
-					*(a[i] + j) = beita / (temp - 2 + 2 * alpha)
-							+ (1 - beita) / (temp + 2 - 2 * alpha);
+					*(a[j] + i) = beita * (temp - 2 + 2 * alpha) + (1 - beita) * (temp + 2 - 2 * alpha);
+					*(a[i] + j) = beita / (temp - 2 + 2 * alpha) + (1 - beita) / (temp + 2 - 2 * alpha);
 				}
 			}
 		}
@@ -511,8 +507,7 @@ int main() {
 	L2("intitialize matrix with user's values");
 	for (int i = 0; i < n; i++) {
 		for (int j = i + 1; j < n; j++) {
-			cout << "\t\tline [" << i << "] column [" << j << "] Enter value ："
-					<< endl;
+			cout << "\t\tline [" << i << "] column [" << j << "] Enter value ："<< endl;
 			cin >> *(a[i] + j);
 		}
 	}
