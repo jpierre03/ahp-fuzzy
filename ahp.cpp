@@ -480,7 +480,7 @@ void tranverse(double **a, double alpha, double beita, int n) {
 
 }
 
-int check(double maxnamta, int n) {
+int checkConsistency(double maxnamta, int n) {
 	FUNCTION("Check");
 	double a[9] = { 0, 0, 0.58, 0.9, 1.12, 1.24, 1.32, 1.41, 1.45 };
 	if (((maxnamta - n) / (n - 1)) / a[n - 1] < 0.1)
@@ -498,7 +498,6 @@ int main() {
 	L2("create matrix");
 	double **a;
 	a = new double*[n];
-
 	for (int i = 0; i < n; i++) {
 		a[i] = new double[n];
 	}
@@ -528,13 +527,21 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		cout << "\t\t";
 		for (int j = 0; j < n; j++) {
+			A[i].push_back(*(a[i] + j));
+		}
+		cout << endl;
+	}
+
+	L1("Show preference matrix");
+	for (int i = 0; i < n; i++) {
+		cout << "\t\t";
+		for (int j = 0; j < n; j++) {
 			if (i > j) {
 				cout << BLUE;
 			}
 			if (i == j) {
 				cout << CYAN;
 			}
-			A[i].push_back(*(a[i] + j));
 			printf("%7.5f | ", (*(a[i] + j)));
 			cout << DEFAULT_COLOR;
 		}
@@ -563,22 +570,19 @@ int main() {
 	cout << maxnamta << endl;
 
 	L1("Check consistency");
-
-	if (check(maxnamta, n) == 1) {
+	if (checkConsistency(maxnamta, n) == 1) {
 		OK("", "一consistency check : Passed！");
 	} else {
 		NOK("", "一consistency check : Failed！");
 	}
 
 	L1("Preference Eigenvector");
-
 	L2("compute");
 	vector<double> ve = ComputeVector(A, maxnamta, delta);
 	L2("show values");
 	Print(ve);
 
 	L1("Normalize vector");
-
 	L2("define vector sum");
 	double sum = 0;
 	for (int i = 0; i < n; i++) {
