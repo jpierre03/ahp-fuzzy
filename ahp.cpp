@@ -523,7 +523,7 @@ int main() {
 	L1("Tranverse matrix");
 	tranverse(a, alpha, beita, n);
 
-	L1("XXXX");
+	L1("Create a one dimension vector from preference matrix");
 	vector<vector<double> > A(n);
 	for (int i = 0; i < n; i++) {
 		cout << "\t\t";
