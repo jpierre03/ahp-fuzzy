@@ -1,5 +1,7 @@
 *~
 .*
+!.gitignore
+
 tags
 a.out
-!.gitignore
+*.bin
